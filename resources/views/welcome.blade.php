@@ -62,6 +62,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .logo{
+                width: 282px;
+                height: 175px;
+            }
         </style>
     </head>
     <body>
@@ -79,15 +83,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <img class="logo" src="{{asset('img/NINE9.png')}}">
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laravel.com/docs">Soluções para seu negócio!</a>
+                  
                 </div>
             </div>
         </div>
