@@ -21,7 +21,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="cli">
               <i class="material-icons">person</i>
               <p>Clientes</p>
             </a>
