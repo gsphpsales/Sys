@@ -33,7 +33,7 @@
             </a>
           </li>
           <li @if($current=="cat") class="nav-item active" @else class="nav-item" @endif>
-            <a class="nav-link" href="category">
+            <a class="nav-link" href="cat">
               <i class="material-icons">category</i>
               <p>Categoria</p>
             </a>
