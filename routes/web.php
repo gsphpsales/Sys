@@ -25,3 +25,7 @@ Route::get('/cli_new', 'CliController@cli_new')->name('cli_new');
 //cat control
 Route::get('/cat', 'CatController@index')->name('index');
 Route::get('/cat_new', 'CatController@cat_new')->name('cat_new');
+
+//prod control
+Route::get('/prod', 'ProdController@index')->name('index');
+Route::get('/prod_new', 'ProdController@cat_new')->name('prod_new');
