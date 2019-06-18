@@ -27,19 +27,25 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="request">
               <i class="material-icons">content_paste</i>
               <p>Pedidos</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="category">
+              <i class="material-icons">category</i>
+              <p>Categoria</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="prod">
               <i class="material-icons">library_books</i>
               <p>Produtos</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="report">
               <i class="material-icons">bubble_chart</i>
               <p>Relatórios</p>
             </a>
@@ -52,7 +58,7 @@
             </a>
           </li>-->
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="alert">
               <i class="material-icons">notifications</i>
               <p>Alertas</p>
             </a>
