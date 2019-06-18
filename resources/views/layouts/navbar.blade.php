@@ -14,37 +14,37 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li @if($current=="home") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="home">
               <i class="material-icons">dashboard</i>
               <p>Administrativo</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li @if($current=="cli") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="cli">
               <i class="material-icons">person</i>
               <p>Clientes</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li @if($current=="req") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="request">
               <i class="material-icons">content_paste</i>
               <p>Pedidos</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li @if($current=="cat") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="category">
               <i class="material-icons">category</i>
               <p>Categoria</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li @if($current=="prod") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="prod">
               <i class="material-icons">library_books</i>
               <p>Produtos</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li @if($current=="rep") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="report">
               <i class="material-icons">bubble_chart</i>
               <p>Relatórios</p>
@@ -57,7 +57,7 @@
               <p>Maps</p>
             </a>
           </li>-->
-          <li class="nav-item ">
+          <li @if($current=="aler") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="alert">
               <i class="material-icons">notifications</i>
               <p>Alertas</p>

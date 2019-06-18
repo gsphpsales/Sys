@@ -24,7 +24,7 @@
 </head>
 <body class="">
     <div class="wrapper ">
-             @extends('layouts.navbar')       
+             @extends('layouts.navbar', ["current" => $current])       
                
 
             @yield('content')
