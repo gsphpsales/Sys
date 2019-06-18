@@ -25,63 +25,64 @@
                 <div class="card-body">
                   <form>
                     <div class="row">
-                      <div class="col-md-5">
+                      <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Empresa</label>
-                          <input type="text" class="form-control" >
+                         
+                          <input type="text" class="form-control" placeholder="Empresa" >
                         </div>
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Nome</label>
-                          <input type="text" class="form-control">
+                          
+                          <input type="text" class="form-control"  placeholder="Nome">
                         </div>
                       </div>
-                      <div class="col-md-4">
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Email</label>
-                          <input type="email" class="form-control">
+                       
+                          <input type="text" class="form-control"  placeholder="Endereço">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          
+                          <input type="text" class="form-control"  placeholder="Endereço de entrega">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Endereço</label>
-                          <input type="text" class="form-control">
+                       
+                          <input type="text" class="form-control"  placeholder="Cidade">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Endereço de entrega</label>
-                          <input type="text" class="form-control">
+                          
+                          <input type="text" class="form-control"  placeholder="Cep">
                         </div>
                       </div>
+                      
                     </div>
                     <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Telefone</label>
-                          <input type="text" class="form-control">
+                          
+                          <input type="text" class="form-control"  placeholder="Telefone">
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Cidade</label>
-                          <input type="text" class="form-control">
+                          
+                          <input type="email" class="form-control"  placeholder="E-mail">
                         </div>
                       </div>
-                      <div class="col-md-4">
-                        
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Cep</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
+                      
+                      
                     </div>
                     <div class="row">
                       <div class="col-md-12">

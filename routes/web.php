@@ -18,4 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//cli control
 Route::get('/cli', 'CliController@index')->name('cli');
+Route::get('/cli_new', 'CliController@cli_new')->name('cli_new');

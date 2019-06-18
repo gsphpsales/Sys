@@ -23,6 +23,10 @@ class CliController extends Controller
      */
     public function index()
     {
-        return view('cli');
+        return view('client.cli');
+    }
+    public function cli_new()
+    {
+        return view('client.cli_new');
     }
 }
