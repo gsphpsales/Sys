@@ -19,5 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //cli control
-Route::get('/cli', 'CliController@index')->name('cli');
+Route::get('/cli', 'CliController@index')->name('index');
 Route::get('/cli_new', 'CliController@cli_new')->name('cli_new');
+
+//cat control
+Route::get('/cat', 'CatController@index')->name('index');
+Route::get('/cat_new', 'CatController@cat_new')->name('cat_new');
