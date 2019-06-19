@@ -86,6 +86,10 @@ class CatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cat =  Categories::find($id);
+        if (isset($cat)) {
+            $cat->delete();
+        }
+        return redirect('/cat');
     }
 }
