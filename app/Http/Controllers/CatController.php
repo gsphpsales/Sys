@@ -41,6 +41,7 @@ class CatController extends Controller
         $cat->name = $request->input('name');
         $cat->status = "1";
         $cat->save();
+        return redirect('/cat');
     }
 
     /**
