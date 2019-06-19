@@ -14,7 +14,8 @@ class CatController extends Controller
      */
     public function index()
     {
-        return view('category.cat');
+        $cats = Categories::all();
+        return view('category.cat', compact('cats'));
     }
 
     /**

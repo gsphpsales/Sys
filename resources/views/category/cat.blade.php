@@ -27,28 +27,37 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          ID
+                          Nº
                         </th>
                         <th>
                          Nome
                         </th>
                         <th>
-                          Desc
+                          Status
+                        </th>
+                        <th>
+                          Ação
                         </th>
                         
                       </thead>
                       <tbody>
+                        @foreach($cats as $cat)
                         <tr>
                           <td>
-                            1
+                            {{$cat->id}}
                           </td>
                           <td>
-                            Dakota Rice
+                            {{$cat->name}}
                           </td>
                           <td>
-                            shoes
+                            {{$cat->status}}
+                          </td>
+                          <td>
+                            <a href="/Sys/public/cat/edit/{{$cat->id}}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="/Sys/public/cat/exc/{{$cat->id}}" class="btn btn-sm btn-danger">Apagar</a>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
