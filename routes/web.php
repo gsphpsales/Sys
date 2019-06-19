@@ -27,7 +27,8 @@ Route::get('/cat', 'CatController@index');
 Route::get('/cat/new', 'CatController@create');
 Route::post('/cat', 'CatController@store');
 Route::get('/cat/del/{id}', 'CatController@destroy');
-
+Route::get('/cat/edit/{id}', 'CatController@edit');
+Route::post('/cat/{id}', 'CatController@update');
 
 //prod control
 Route::get('/prod', 'ProdController@index')->name('index');

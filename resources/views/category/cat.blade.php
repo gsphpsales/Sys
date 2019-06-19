@@ -33,6 +33,9 @@
                          Nome
                         </th>
                         <th>
+                         Desc
+                        </th>
+                        <th>
                           Status
                         </th>
                         <th>
@@ -48,6 +51,9 @@
                           </td>
                           <td>
                             {{$cat->name}}
+                          </td>
+                          <td>
+                            {{$cat->desc}}
                           </td>
                           <td>
                             {{$cat->status}}

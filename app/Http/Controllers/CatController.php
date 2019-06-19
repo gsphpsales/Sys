@@ -39,6 +39,7 @@ class CatController extends Controller
         
         $cat = new Categories();
         $cat->name = $request->input('name');
+        $cat->desc = $request->input('desc');
         $cat->status = "1";
         $cat->save();
         return redirect('/cat');
@@ -63,7 +64,11 @@ class CatController extends Controller
      */
     public function edit($id)
     {
-        //
+         $cat =  Categories::find($id);
+        if (isset($cat)) {
+            return view('category.cat_edi', compact('cat'));
+        }
+        return redirect('/cat');
     }
 
     /**
@@ -75,7 +80,13 @@ class CatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $cat =  Categories::find($id);
+        if (isset($cat)) {
+            $cat->name = $request->input('name');
+            $cat->desc = $request->input('desc');
+            $cat->save();
+        }
+        return redirect('/cat');
     }
 
     /**
