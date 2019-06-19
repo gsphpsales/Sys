@@ -23,12 +23,13 @@
                  <!--form here -->
                 
                 <div class="card-body">
-                  <form action="cat" method="POST">
+                  <form action="/Sys/public/cat" method="POST">
+                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                          
-                          <input type="text" class="form-control" placeholder="Nome" >
+                          <input type="text" name="name" class="form-control" placeholder="Nome" >
                         </div>
                       </div>
                       
@@ -43,7 +44,7 @@
                           <label>Desc:</label>
                           <div class="form-group">
                             <label class="bmd-label-floating"> Cescrição do produto.</label>
-                            <textarea class="form-control" rows="5"></textarea>
+                            <textarea class="form-control" rows="5" name="desc"></textarea>
                           </div>
                         </div>
                       </div>

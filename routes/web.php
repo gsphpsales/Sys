@@ -23,8 +23,8 @@ Route::get('/cli', 'CliController@index')->name('index');
 Route::get('/cli_new', 'CliController@cli_new')->name('cli_new');
 
 //cat control
-Route::get('/cat', 'CatController@index')->name('index');
-Route::get('/cat/new', 'CatController@create')->name('create');
+Route::get('/cat', 'CatController@index');
+Route::get('/cat/new', 'CatController@create');
 Route::post('/cat', 'CatController@store');
 
 //prod control
