@@ -103,4 +103,11 @@ class CatController extends Controller
         }
         return redirect('/cat');
     }
+
+    public function indexJson()
+    {
+        $cats = Categoria::all();
+        return json_encode($cats);
+    }    
+}
 }

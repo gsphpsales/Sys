@@ -31,5 +31,5 @@ Route::get('/cat/edit/{id}', 'CatController@edit');
 Route::post('/cat/{id}', 'CatController@update');
 
 //prod control
-Route::get('/prod', 'ProdController@index')->name('index');
-Route::get('/prod_new', 'ProdController@cat_new')->name('prod_new');
+Route::get('/prod', 'ProdController@indexView');
+

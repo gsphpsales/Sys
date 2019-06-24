@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 
 class ProdController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+     public function indexView()
+    {
+       return view('products.prod');
+    }
     public function index()
     {
-        return view('products.prod');
+         $prods = Produto::all();
+        return $prods->toJson();
+        
     }
 
     /**
