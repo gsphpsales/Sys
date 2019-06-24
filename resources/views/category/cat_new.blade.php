@@ -29,7 +29,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                          
-                          <input type="text" name="name" class="form-control" placeholder="Nome" >
+                          <input type="text" name="name" class="form-control" placeholder="Nome" required="required">
                         </div>
                       </div>
                       
@@ -44,7 +44,7 @@
                           <label>Desc:</label>
                           <div class="form-group">
                             <label class="bmd-label-floating"> Cescrição do produto.</label>
-                            <textarea class="form-control" rows="5" name="desc"></textarea>
+                            <textarea class="form-control" rows="5" name="desc" required="required"></textarea>
                           </div>
                         </div>
                       </div>
