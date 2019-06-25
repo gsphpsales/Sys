@@ -194,15 +194,15 @@
     function criarProduto() {
         prod = { 
             name: $("#np").val(),
-            ref:  $('#ref').val(''), 
+            ref:  $("#ref").val(), 
             price_c: $("#pc").val(), 
             price_s: $("#pv").val(),
-            img: $('#img').val(''), 
+            img: $("#img").val(), 
             cat_id: $("#catp").val() 
         };
         $.post("/api/prod", prod, function(data) {
-            produto = JSON.parse(data);
-            linha = montarLinha(produto);
+            prod = JSON.parse(data);
+            linha = montarLinha(prod);
             $('#tabelaProdutos>tbody').append(linha);            
         });
     }
@@ -211,10 +211,10 @@
         prod = { 
             id : $("#id").val(), 
             name: $("#np").val(),
-            ref:  $('#ref').val(''), 
+            ref:  $("#ref").val(), 
             price_c: $("#pc").val(), 
             price_s: $("#pv").val(),
-            img: $('#img').val(''), 
+            img: $("#img").val(), 
             cat_id: $("#catp").val() 
         };
         $.ajax({
