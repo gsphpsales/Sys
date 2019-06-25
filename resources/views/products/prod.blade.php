@@ -31,7 +31,7 @@
                           <th>Preço Custo</th>
                           <th>Preço Venda</th>
                           <th>Cat</th>
-                          <th>acoes</th>
+                          <th>Acoes</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -78,7 +78,8 @@
                         <input type="text" class="form-control" id="pv" placeholder="Preço do Venda">
                     </div>
                     <div class="form-group">
-                        <input type="file" class="form-control" id="img" >
+                        <label>Escolha a imagem do produto</label>
+                        <input type="file" class="form-control-file" id="img">
                     </div>
                     
                     <div class="form-group">
@@ -152,9 +153,10 @@
             console.log(data);
             $('#id').val(data.id);
             $('#np').val(data.name);
+            $('#ref').val(data.ref);
             $('#pc').val(data.price_c);
             $('#pv').val(data.price_s);
-            $('#pv').val(data.img);
+            $('#img').val(data.img);
             $('#catp').val(data.cat_id);
             $('#dlgProdutos').modal('show');            
         });        
