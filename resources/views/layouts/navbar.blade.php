@@ -21,7 +21,7 @@
             </a>
           </li>
           <li @if($current=="cli") class="nav-item active" @else class="nav-item" @endif>
-            <a class="nav-link" href="/Sys/public/cli">
+            <a class="nav-link" href="/cli">
               <i class="material-icons">person</i>
               <p>Clientes</p>
             </a>
