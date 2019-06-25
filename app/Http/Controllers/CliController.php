@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Clients;
 class CliController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
+
+     public function indexView()
+    {
+       return view('client.cli');
+    }
     public function index()
     {
-        //
+         $prods = products::all();
+        return $prods->toJson();
     }
 
     /**
