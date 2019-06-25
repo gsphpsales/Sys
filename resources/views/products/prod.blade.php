@@ -28,7 +28,8 @@
                           <th>Nº</th>
                           <th>Nome</th>
                           <th>Ref</th>
-                          <th>Desc</th>
+                          <th>Preço Custo</th>
+                          <th>Preço Venda</th>
                           <th>Cat</th>
                           <th>acoes</th>
                           </tr>
@@ -65,36 +66,25 @@
 
                     <input type="hidden" id="id" class="form-control">
                     <div class="form-group">
-                            <input type="text" class="form-control" id="np" placeholder="Nome do produto">
-                        
+                        <input type="text" class="form-control" id="np" placeholder="Nome do produto">
+                    </div>
+                    <div class="form-group">   
+                        <input type="text" class="form-control" id="ref" placeholder="Referência">   
                     </div>
                     <div class="form-group">
-                        
-                            <input type="text" class="form-control" id="ref" placeholder="Referência">
-                        
-                        
-                    </div>
-<div class="form-group">
-                       <input type="text" class="form-control" id="desc" placeholder="Descrição">
-</div>
-     
-
-                    <div class="form-group">
-                        
-                            <input type="text" class="form-control" id="pc" placeholder="Preço Custo">
-                        
+                        <input type="text" class="form-control" id="pc" placeholder="Preço Custo">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="pv" placeholder="Preço do Venda">
-                        </div>
-                    
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control" id="img" >
+                    </div>
                     
                     <div class="form-group">
                         <label for="catp" class="control-label">Categoria</label>
-                        <div class="input-group">
-                            <select class="form-control" id="catp" >
-                            </select>    
-                        </div>
+                        <select class="form-control" id="catp" >
+                        </select>    
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -125,7 +115,9 @@
         $('#id').val('');
         $('#np').val('');
         $('#ref').val('');
-        $('#desc').val('');
+        $('#pc').val('');
+        $('#pv').val('');
+        $('#img').val('');
         $('#dlgProdutos').modal('show');
     }
     
@@ -144,7 +136,8 @@
             "<td>" + p.id + "</td>" +
             "<td>" + p.name + "</td>" +
             "<td>" + p.ref + "</td>" +
-            "<td>" + p.desc + "</td>" +
+            "<td>" + p.price_c + "</td>" +
+            "<td>" + p.price_s + "</td>" +
             "<td>" + p.cat_id + "</td>" +
             "<td>" +
               '<button class="btn btn-sm btn-primary" onclick="editar(' + p.id + ')"> Editar </button> ' +
@@ -158,10 +151,11 @@
         $.getJSON('/api/prod/'+id, function(data) { 
             console.log(data);
             $('#id').val(data.id);
-            $('#nomeProduto').val(data.nome);
-            $('#precoProduto').val(data.preco);
-            $('#quantidadeProduto').val(data.estoque);
-            $('#categoriaProduto').val(data.categoria_id);
+            $('#np').val(data.name);
+            $('#pc').val(data.price_c);
+            $('#pv').val(data.price_s);
+            $('#pv').val(data.img);
+            $('#catp').val(data.cat_id);
             $('#dlgProdutos').modal('show');            
         });        
     }
@@ -197,10 +191,12 @@
     
     function criarProduto() {
         prod = { 
-            nome: $("#np").val(), 
-            preco: $("#pc").val(), 
-            estoque: $("#pv").val(), 
-            categoria_id: $("#categoriaProduto").val() 
+            name: $("#np").val(),
+            ref:  $('#ref').val(''), 
+            price_c: $("#pc").val(), 
+            price_s: $("#pv").val(),
+            img: $('#img').val(''), 
+            cat_id: $("#catp").val() 
         };
         $.post("/api/prod", prod, function(data) {
             produto = JSON.parse(data);
@@ -212,14 +208,16 @@
     function salvarProduto() {
         prod = { 
             id : $("#id").val(), 
-            nome: $("#nomeProduto").val(), 
-            preco: $("#precoProduto").val(), 
-            estoque: $("#quantidadeProduto").val(), 
-            categoria_id: $("#categoriaProduto").val() 
+            name: $("#np").val(),
+            ref:  $('#ref').val(''), 
+            price_c: $("#pc").val(), 
+            price_s: $("#pv").val(),
+            img: $('#img').val(''), 
+            cat_id: $("#catp").val() 
         };
         $.ajax({
             type: "PUT",
-            url: "/api/produtos/" + prod.id,
+            url: "/api/prod/" + prod.id,
             context: this,
             data: prod,
             success: function(data) {
@@ -230,10 +228,12 @@
                 });
                 if (e) {
                     e[0].cells[0].textContent = prod.id;
-                    e[0].cells[1].textContent = prod.nome;
-                    e[0].cells[2].textContent = prod.estoque;
-                    e[0].cells[3].textContent = prod.preco;
-                    e[0].cells[4].textContent = prod.categoria_id;
+                    e[0].cells[1].textContent = prod.name;
+                    e[0].cells[2].textContent = prod.ref;
+                    e[0].cells[3].textContent = prod.price_c;
+                    e[0].cells[4].textContent = prod.price_s;
+                    e[0].cells[5].textContent = prod.img;
+                    e[0].cells[6].textContent = prod.cat_id;
                 }
             },
             error: function(error) {
