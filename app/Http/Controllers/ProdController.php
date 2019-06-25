@@ -72,13 +72,14 @@ class ProdController extends Controller
     {
          $prod = Products::find($id);
         if (isset($prod)) {
-            $prod->name = $request->input('np');
+            $prod->name = $request->input('name');
             $prod->ref = $request->input('ref');
-            $prod->price_c = $request->input('pc');
-            $prod->price_s = $request->input('pv');
+            $prod->price_c = $request->input('price_c');
+            $prod->price_s = $request->input('price_s');
             $prod->img = $request->input('img');
-            $prod->cat_id = $request->input('catp');
-                $prod->save();
+            $prod->cat_id = $request->input('cat_id');
+            $prod->status = "Ativo";
+            $prod->save();
             return json_encode($prod);
         }
         return response('Produto não encontrado', 404);

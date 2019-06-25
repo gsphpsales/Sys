@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group">
                         <label>Escolha a imagem do produto</label>
-                        <input type="file" class="form-control-file" id="img">
+                        <input type="file" class="form-control-file" id="img" required="required">
                     </div>
                     
                     <div class="form-group">
@@ -156,7 +156,6 @@
             $('#ref').val(data.ref);
             $('#pc').val(data.price_c);
             $('#pv').val(data.price_s);
-            $('#img').val(data.img);
             $('#catp').val(data.cat_id);
             $('#dlgProdutos').modal('show');            
         });        
@@ -223,10 +222,10 @@
             context: this,
             data: prod,
             success: function(data) {
-                prod = JSON.parse(data);
+                prods = JSON.parse(data);
                 linhas = $("#tabelaProdutos>tbody>tr");
                 e = linhas.filter( function(i, e) { 
-                    return ( e.cells[0].textContent == prod.id );
+                    return ( e.cells[0].textContent == prods.id );
                 });
                 if (e) {
                     e[0].cells[0].textContent = prod.id;
@@ -234,8 +233,8 @@
                     e[0].cells[2].textContent = prod.ref;
                     e[0].cells[3].textContent = prod.price_c;
                     e[0].cells[4].textContent = prod.price_s;
-                    e[0].cells[5].textContent = prod.img;
-                    e[0].cells[6].textContent = prod.cat_id;
+                    e[0].cells[5].textContent = prod.cat_id;
+                    //e[0].cells[6].textContent = prod.img;
                 }
             },
             error: function(error) {
