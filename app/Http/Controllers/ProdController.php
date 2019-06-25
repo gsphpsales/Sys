@@ -66,16 +66,21 @@ class ProdController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
-        //
+         $prod = Products::find($id);
+        if (isset($prod)) {
+            $prod->name = $request->input('np');
+            $prod->ref = $request->input('ref');
+            $prod->price_c = $request->input('pc');
+            $prod->price_s = $request->input('pv');
+            $prod->img = $request->input('img');
+            $prod->cat_id = $request->input('catp');
+                $prod->save();
+            return json_encode($prod);
+        }
+        return response('Produto não encontrado', 404);
     }
 
     /**
@@ -86,6 +91,11 @@ class ProdController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $prod = Products::find($id);
+        if (isset($prod)) {
+            $prod->delete();
+            return response('OK', 200);
+        }
+        return response('Produto não encontrado', 404);
     }
 }
