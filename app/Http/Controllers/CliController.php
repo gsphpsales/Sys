@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Clients;
+
 class CliController extends Controller
 {
    
@@ -14,8 +15,8 @@ class CliController extends Controller
     }
     public function index()
     {
-         $prods = products::all();
-        return $prods->toJson();
+         $cli = Clients::all();
+        return $cli->toJson();
     }
 
     /**
@@ -36,7 +37,19 @@ class CliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+           $cli = new Clients();
+        $cli->razao_soc = $request->input('rs');
+        $cli->fantasia = $request->input('nf');
+        $cli->cnpj = $request->input('cnpj');
+        $cli->ie = $request->input('ie');
+        $cli->email = $request->input('email');
+        $cli->celular = $request->input('cel');
+        $cli->fixo = $request->input('fix');
+        $cli->endereco = $request->input('end');
+        $cli->endereco_ent = $request->input('endt');
+        $cli->status = "Ativo";
+        $cli->save();
+        return json_encode($cli);
     }
 
     /**
@@ -47,7 +60,12 @@ class CliController extends Controller
      */
     public function show($id)
     {
-        //
+       $cli =  Clients::find($id);
+        if (isset($cli)) {
+            # code...
+            return json_encode($cli);
+        }
+        return response('Não encontrado', 404); 
     }
 
     /**
@@ -70,7 +88,22 @@ class CliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $cli = Clients::find($id);
+        if (isset($cli)) {
+            $cli->razao_soc = $request->input('rs');
+            $cli->fantasia = $request->input('nf');
+            $cli->cnpj = $request->input('cnpj');
+            $cli->ie = $request->input('ie');
+            $cli->email = $request->input('email');
+            $cli->celular = $request->input('cel');
+            $cli->fixo = $request->input('fix');
+            $cli->endereco = $request->input('end');
+            $cli->endereco_ent = $request->input('endt');
+            $cli->status = "Ativo";
+                $cli->save();
+            return json_encode($cli);
+        }
+        return response('cliuto não encontrado', 404);
     }
 
     /**
