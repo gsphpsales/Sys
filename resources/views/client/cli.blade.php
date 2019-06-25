@@ -4,162 +4,119 @@
 
  <div class="main-panel">
       @extends('layouts.navbar_admin')
-      
-
-          <!--teste table-->
-<div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                   <div class="card-icon">
-                    <i class="material-icons">person</i>
-                  </div>
-                  <h3 class="card-title ">Lista de Clientes</h3> 
-
-                  
-                </div>
-                  <p class="nav-link"><a href="cli_new"><i class="material-icons">note_add</i></a></p>
-                </div>
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <div class="card-icon">
+                <i class="material-icons">person</i>
+              </div>
+                <h3 class="card-title ">Lista de Clientes</h3> 
+            </div>
+              <p class="nav-link" onClick="novoProduto()"><i class="material-icons">note_add</i></p>
+          </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
-                        <th>
-                          ID
-                        </th>
-                        <th>
-                         Nome
-                        </th>
-                        <th>
-                          Fone
-                        </th>
-                        <th>
-                          Cidade
-                        </th>
-                        <th>
-                         Status
-                        </th>
+                        <th>Nome</th>
+                        <th>Celular</th>
+                        <th>Cidade</th>
+                        <th>Ações</th>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            Dakota Rice
-                          </td>
-                          <td>
-                            Niger
-                          </td>
-                          <td>
-                            Oud-Turnhout
-                          </td>
-                          <td class="text-primary">
-                            ATIVO
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
-                          <td>
-                            Curaçao
-                          </td>
-                          <td>
-                            Sinaai-Waas
-                          </td>
-                          <td class="text-primary">
-                           ATIVO
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            Sage Rodriguez
-                          </td>
-                          <td>
-                            Netherlands
-                          </td>
-                          <td>
-                            Baileux
-                          </td>
-                          <td class="text-primary">
-                           ATIVO
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>
-                            Philip Chaney
-                          </td>
-                          <td>
-                            Korea, South
-                          </td>
-                          <td>
-                            Overland Park
-                          </td>
-                          <td class="text-primary">
-                            ATIVO
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            Doris Greene
-                          </td>
-                          <td>
-                            Malawi
-                          </td>
-                          <td>
-                            Feldkirchen in Kärnten
-                          </td>
-                          <td class="text-primary">
-                        ATIVO
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>
-                            Mason Porter
-                          </td>
-                          <td>
-                            Chile
-                          </td>
-                          <td>
-                            Gloucester
-                          </td>
-                          <td class="text-primary">
-                            ATIVO
-                          </td>
-                        </tr>
+                        
                       </tbody>
                     </table>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            </div>
-          </div>
         </div>
-      </div>
-      
-          close test-->
+      </div> 
+    </div>
+  </div>
+</div>   
+     <!--modal-->
+<div class="modal" tabindex="-1" role="dialog" id="dlgClient">
+    <div class="modal-dialog" role="document"> 
+        <div class="modal-content col-md-12">
+            <form class="form-horizontal" id="formClient">
+                <div class="modal-header">
+                    <h5 class="modal-title">Novo Cliente</h5>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                           <input type="hidden" id="id" class="form-control">
+                          <input type="text" class="form-control" id="rs" placeholder="Razão social" >
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          
+                          <input type="text" class="form-control" id="nf"  placeholder="Nome fantasia">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                       
+                          <input type="text" class="form-control" id="cnpj"  placeholder="CNPJ">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          
+                          <input type="text" class="form-control" id="ie"  placeholder="IE">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                       
+                          <input type="text" class="form-control" id="email"  placeholder="E-mail">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          
+                          <input type="text" class="form-control" id="cel"  placeholder="Celular">
+                        </div>
+                        <div class="form-group">
+                          
+                          <input type="text" class="form-control" id="fix"  placeholder="Fixo">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="end" placeholder="Endereço">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group"> 
+                          <input type="text" class="form-control" id="end_ent" placeholder="Endereço de entrega">
+                        </div>
+                      </div>
+                    </div>   
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+      <!--modalx-->   
           
-        </div>
-      </div>
+       
      
 @endsection
