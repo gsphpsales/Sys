@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Products;
 
 class ProdController extends Controller
 {
@@ -13,7 +14,7 @@ class ProdController extends Controller
     }
     public function index()
     {
-         $prods = Produto::all();
+         $prods = products::all();
         return $prods->toJson();
         
     }

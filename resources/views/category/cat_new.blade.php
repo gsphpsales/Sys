@@ -23,7 +23,7 @@
                  <!--form here -->
                 
                 <div class="card-body">
-                  <form action="/Sys/public/cat" method="POST">
+                  <form action="/cat" method="POST">
                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="row">
                       <div class="col-md-6">

@@ -106,8 +106,8 @@ class CatController extends Controller
 
     public function indexJson()
     {
-        $cats = Categoria::all();
+        $cats = Categories::all();
         return json_encode($cats);
     }    
-}
+
 }
