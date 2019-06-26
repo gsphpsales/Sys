@@ -50,13 +50,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                            <input type="hidden" id="id" class="form-control">
-                          <input type="text" class="form-control" id="rs" placeholder="Razão social" >
+                          <input type="text" class="form-control" id="rs" required="required" placeholder="Razão social" >
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           
-                          <input type="text" class="form-control" id="nf"  placeholder="Nome fantasia">
+                          <input type="text" class="form-control" id="nf" required="required"  placeholder="Nome fantasia">
                         </div>
                       </div>
                       
@@ -65,13 +65,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                        
-                          <input type="text" class="form-control" id="cnpj"  placeholder="CNPJ">
+                          <input type="text" class="form-control" id="cnpj" required="required"  placeholder="CNPJ">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           
-                          <input type="text" class="form-control" id="ie"  placeholder="IE">
+                          <input type="text" class="form-control" id="ie" required="required"  placeholder="IE">
                         </div>
                       </div>
                     </div>
@@ -79,7 +79,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                        
-                          <input type="text" class="form-control" id="email"  placeholder="E-mail">
+                          <input type="text" class="form-control" id="email" required="required"  placeholder="E-mail">
                         </div>
                       </div>
                     </div>
@@ -88,25 +88,25 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           
-                          <input type="text" class="form-control" id="cel"  placeholder="Celular">
+                          <input type="text" class="form-control" id="cel" required="required" placeholder="Celular">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
         
-                          <input type="text" class="form-control" id="fix"  placeholder="Fixo">
+                          <input type="text" class="form-control" id="fix" required="required" placeholder="Fixo">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="end" placeholder="Endereço">
+                          <input type="text" class="form-control" id="end" required="required" placeholder="Endereço">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group"> 
-                          <input type="text" class="form-control" id="end_ent" placeholder="Endereço de entrega">
+                          <input type="text" class="form-control" id="end_ent" required="required" placeholder="Endereço de entrega">
                         </div>
                       </div>
                     </div>   
