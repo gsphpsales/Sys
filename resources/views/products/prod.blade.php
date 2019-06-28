@@ -72,10 +72,10 @@
                         <input type="text" class="form-control" id="ref" placeholder="Referência">   
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="pc" placeholder="Preço Custo">
+                        <input type="text" class="form-control" id="pc" onKeyPress="return(moeda(this,'.',',',event))" placeholder="Preço Custo">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="pv" placeholder="Preço do Venda">
+                        <input type="text" class="form-control" id="pv" onKeyPress="return(moeda(this,'.',',',event))" placeholder="Preço do Venda">
                     </div>
                     <div class="form-group">
                         <label>Escolha a imagem do produto</label>

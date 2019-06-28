@@ -278,7 +278,7 @@
 
     });
   </script>
-   @extends('layouts.navbar')    
+   @extends('layouts.mask')    
    @hasSection('javascript')
         @yield('javascript')
     @endif
