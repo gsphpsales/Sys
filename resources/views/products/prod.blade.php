@@ -20,7 +20,7 @@
                 </div>
                 <h4 class="nav-link" >
                     <a href="#" onClick="novoProduto()"><i class="material-icons">note_add</i> Novo</a>&nbsp;  
-                    <a href="#"><i class="material-icons">grid_on</i> Grade</a>&nbsp;
+                    <a href="#" onClick="newGrid()"><i class="material-icons">grid_on</i> Grade</a>&nbsp;
                     <a href="#"><i class="material-icons">photo_size_select_small</i> Tamanho</a>
                 </h4>
                   
@@ -103,6 +103,41 @@
 </div>
 
       <!--modalx-->
+
+        <!--modal Grid-->
+
+<div class="modal" tabindex="-1" role="dialog" id="dlgGrid">
+    <div class="modal-dialog" role="document"> 
+        <div class="modal-content col-md-12">
+            <form class="form-horizontal" id="formGrid">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nova Grade</h5>
+                </div>
+                <div class="modal-body">
+
+                  
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ng" placeholder="Nome da Grade">
+                    </div>
+                                       
+                    <div class="form-group">
+                        <label for="st" class="control-label">Status</label>
+                        <select class="form-control" id="st" >
+                            <option value="1">ATIVO</option>
+                            <option value="0">INATIVO</option>
+                        </select>    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+      <!--modalGridx-->
 
 @endsection
 
@@ -261,7 +296,19 @@
     $(function(){
         carregarCategorias();
         carregarProdutos();
-    })
+    });
+
+    $("#formGrid").submit( function(event){ 
+        event.preventDefault(); 
+            
+        $("#dlgGrid").modal('hide');
+    });
+
+     function newGrid() {
+       
+        $('#dlgGrid').modal('show');
+    }
+
     
 </script>
 @endsection
