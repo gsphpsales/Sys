@@ -18,7 +18,12 @@
                   </div>
                     <h3 class="card-title ">Lista de Produtos</h3> 
                 </div>
-                  <p class="nav-link" onClick="novoProduto()"><a href="#"><i class="material-icons">note_add</i></a></p>
+                <h4 class="nav-link" >
+                    <a href="#" onClick="novoProduto()"><i class="material-icons">note_add</i> Novo</a>&nbsp;  
+                    <a href="#"><i class="material-icons">grid_on</i> Grade</a>&nbsp;
+                    <a href="#"><i class="material-icons">photo_size_select_small</i> Tamanho</a>
+                </h4>
+                  
               </div>
                   <div class="card-body">
                     <div class="table-responsive">
