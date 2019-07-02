@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Grids;
 
 class GridsController extends Controller
 {
@@ -34,7 +35,12 @@ class GridsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $grid = new Grids();
+        $grid->name = $request->input('name');
+        $grid->status = $request->input('status');
+        $grid->save();
+        $al= "Cadastrado grade com sucesso";
+        return json_encode($al);
     }
 
     /**

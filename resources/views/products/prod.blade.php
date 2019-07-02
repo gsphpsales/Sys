@@ -300,13 +300,24 @@
 
     $("#formGrid").submit( function(event){ 
         event.preventDefault(); 
-            
+            CreateGrid();
         $("#dlgGrid").modal('hide');
     });
 
      function newGrid() {
        
         $('#dlgGrid').modal('show');
+    }
+    function CreateGrid() {
+        grid = { 
+            name: $("#ng").val(),
+            status: $("#st").val() 
+        };
+        $.post("/api/grid", grid, function(data) {
+            grid = JSON.parse(data);
+            alert(grid);
+                      
+        });
     }
 
     
