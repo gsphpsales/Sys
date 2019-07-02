@@ -14,7 +14,8 @@ class GridsController extends Controller
      */
     public function index()
     {
-        //
+         $grid = grids::all();
+        return $grid->toJson();
     }
 
     /**
