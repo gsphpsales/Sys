@@ -92,6 +92,13 @@
                         <select class="form-control" id="catp" >
                         </select>    
                     </div>
+
+                    <div class="form-group">
+                        <label for="id_grid" class="control-label">Grade</label>
+                        <select class="form-control" id="id_grid">
+                            
+                        </select>    
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Salvar</button>
