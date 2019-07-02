@@ -21,3 +21,4 @@ Route::get('/cat', 'CatController@indexJson');
 Route::resource('/prod', 'ProdController');
 Route::resource('/cli', 'CliController');
 Route::resource('/grid', 'GridsController');
+Route::resource('/size', 'SizeController');

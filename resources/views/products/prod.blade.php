@@ -21,7 +21,7 @@
                 <h4 class="nav-link" >
                     <a href="#" onClick="novoProduto()"><i class="material-icons">note_add</i> Novo</a>&nbsp;  
                     <a href="#" onClick="newGrid()"><i class="material-icons">grid_on</i> Grade</a>&nbsp;
-                    <a href="#"><i class="material-icons">photo_size_select_small</i> Tamanho</a>
+                    <a href="#" onClick="newSize()"><i class="material-icons">photo_size_select_small</i> Tamanho</a>
                 </h4>
                   
               </div>
@@ -125,6 +125,51 @@
                         <select class="form-control" id="st" >
                             <option value="1">ATIVO</option>
                             <option value="0">INATIVO</option>
+                        </select>    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+      <!--modalGridx-->
+
+           <!--modal Size-->
+
+<div class="modal" tabindex="-1" role="dialog" id="dlgSize">
+    <div class="modal-dialog" role="document"> 
+        <div class="modal-content col-md-12">
+            <form class="form-horizontal" id="formSize">
+                <div class="modal-header">
+                    <h5 class="modal-title">Novo Tamanho</h5>
+                </div>
+                <div class="modal-body">
+
+                  
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ns" placeholder="Nome">
+                    </div>
+                                       
+                    <div class="form-group">
+                        <label for="id_grid" class="control-label">Grade</label>
+                        <select class="form-control" id="id_grid">
+                            
+                        </select>    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ord" class="control-label">Ordem</label>
+                        <select class="form-control" id="order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+
                         </select>    
                     </div>
                 </div>
@@ -296,6 +341,7 @@
     $(function(){
         carregarCategorias();
         carregarProdutos();
+        showGrid();
     });
 
     $("#formGrid").submit( function(event){ 
@@ -303,11 +349,12 @@
             CreateGrid();
         $("#dlgGrid").modal('hide');
     });
-
+    //show modal form grid
      function newGrid() {
        
         $('#dlgGrid').modal('show');
     }
+    //funciotn to save grid
     function CreateGrid() {
         grid = { 
             name: $("#ng").val(),
@@ -316,6 +363,40 @@
         $.post("/api/grid", grid, function(data) {
             grid = JSON.parse(data);
             alert(grid);
+                      
+        });
+    }
+
+    $("#formSize").submit( function(event){ 
+        event.preventDefault(); 
+            CreateSize();
+        $("#dlgSize").modal('hide');
+    });
+    //show modal form grid
+     function newSize() {
+       
+        $('#dlgSize').modal('show');
+    }
+    //function to show grid at form size 
+    function showGrid() {
+        $.getJSON('/api/grid', function(data) { 
+            for(i=0;i<data.length;i++) {
+                opcao = '<option value ="' + data[i].id + '">' + 
+                    data[i].name + '</option>';
+                $('#id_grid').append(opcao);
+            }
+        });
+    }
+    //save size
+    function CreateSize() {
+        size = { 
+            name: $("#ns").val(),
+            id_grid: $("#id_grid").val(),
+            order: $("#order").val()
+        };
+        $.post("/api/size", size, function(data) {
+            size = JSON.parse(data);
+            alert(size);
                       
         });
     }
