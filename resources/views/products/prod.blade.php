@@ -210,6 +210,7 @@
         $('#ref').val('');
         $('#pc').val('');
         $('#pv').val('');
+        $("#id_grid").val('');
         $('#img').val('');
         $('#dlgProdutos').modal('show');
     }
@@ -248,6 +249,7 @@
             $('#ref').val(data.ref);
             $('#pc').val(data.price_c);
             $('#pv').val(data.price_s);
+            $('#id_grid').val(data.grid_id);
             $('#catp').val(data.cat_id);
             $('#dlgProdutos').modal('show');            
         });        
@@ -289,7 +291,8 @@
             price_c: $("#pc").val(), 
             price_s: $("#pv").val(),
             img: $("#img").val(), 
-            cat_id: $("#catp").val() 
+            cat_id: $("#catp").val(), 
+            id_grid: $("#id_grid").val()
         };
         $.post("/api/prod", prod, function(data) {
             prod = JSON.parse(data);
@@ -305,6 +308,7 @@
             ref:  $("#ref").val(), 
             price_c: $("#pc").val(), 
             price_s: $("#pv").val(),
+            id_grid: $("#id_grid").val(),
             img: $("#img").val(), 
             cat_id: $("#catp").val() 
         };

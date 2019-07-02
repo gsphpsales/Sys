@@ -38,6 +38,7 @@ class ProdController extends Controller
         $prod->ref = $request->input('ref');
         $prod->price_c = $request->input('price_c');
         $prod->price_s = $request->input('price_s');
+        $prod->grid_id = $request->input('id_grid');
         $prod->img = $request->input('img');
         $prod->cat_id = $request->input('cat_id');
         $prod->status = "Ativo";
@@ -76,6 +77,7 @@ class ProdController extends Controller
             $prod->ref = $request->input('ref');
             $prod->price_c = $request->input('price_c');
             $prod->price_s = $request->input('price_s');
+            $prod->grid_id = $request->input('id_grid');
             $prod->img = $request->input('img');
             $prod->cat_id = $request->input('cat_id');
             $prod->status = "Ativo";
