@@ -398,7 +398,7 @@
         });
     }
     //function to show grid at form size 
-    function showGrid() {
+    function showGrid2() {
         $.getJSON('/api/grid', function(data) { 
             for(i=0;i<data.length;i++) {
                 opcao = '<option value ="' + data[i].id + '">' + 
