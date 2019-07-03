@@ -164,7 +164,7 @@
                                        
                     <div class="form-group">
                         <label for="id_grid" class="control-label">Grade</label>
-                        <select class="form-control" id="id_grid">
+                        <select class="form-control" id="id_grid2">
                             
                         </select>    
                     </div>
@@ -210,7 +210,6 @@
         $('#ref').val('');
         $('#pc').val('');
         $('#pv').val('');
-        $("#id_grid").val('');
         $('#img').val('');
         $('#dlgProdutos').modal('show');
     }
@@ -353,6 +352,7 @@
         carregarCategorias();
         carregarProdutos();
         showGrid();
+        showGrid2();
     });
 
     $("#formGrid").submit( function(event){ 
@@ -385,8 +385,17 @@
     });
     //show modal form grid
      function newSize() {
-       
         $('#dlgSize').modal('show');
+    }
+    //function to show grid at form products 
+    function showGrid() {
+        $.getJSON('/api/grid', function(data) { 
+            for(i=0;i<data.length;i++) {
+                opcao = '<option value ="' + data[i].id + '">' + 
+                    data[i].name + '</option>';
+                $('#id_grid').append(opcao);
+            }
+        });
     }
     //function to show grid at form size 
     function showGrid() {
@@ -394,7 +403,7 @@
             for(i=0;i<data.length;i++) {
                 opcao = '<option value ="' + data[i].id + '">' + 
                     data[i].name + '</option>';
-                $('#id_grid').append(opcao);
+                $('#id_grid2').append(opcao);
             }
         });
     }
